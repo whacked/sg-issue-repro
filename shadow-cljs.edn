@@ -7,18 +7,7 @@
   [prismatic/schema "1.1.12"]
   [prismatic/schema-generators "0.1.3"]
   ]
-
  :builds
- {:app {:target :browser
-        :output-dir "public/js"
-        :asset-path "/js"
-
-        :modules
-        {:main ;; <- becomes public/js/main.js
-         {:entries [starter.browser]}}
-
-        ;; start a development http server on http://localhost:8020
-        :devtools
-        {:http-root "public"
-         :http-port 8020}
-        }}}
+ {:tester {:target :node-script
+           :output-to "out/tester.js"
+           :main mytest.core/-main}}}
